@@ -1,0 +1,1624 @@
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy File] ***************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/ratings-only.csv c8d641079dae:/", "delta": "0:00:00.577280", "end": "2022-12-16 02:41:15.029524", "rc": 0, "start": "2022-12-16 02:41:14.452244", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Prepare Small Dataset] ***************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae bash -c  'head -n 10000 /home/user_to_movie_ratings.csv > /home/user_to_movie_ratings_small_dataset.csv'", "delta": "0:00:00.114662", "end": "2022-12-16 02:41:17.275314", "rc": 0, "start": "2022-12-16 02:41:17.160652", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Prepapre Dataset] ********************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae bash -c  'rm /home/user_to_movie_ratings_shard*.txt;shards_num=4;split -d --additional-suffix=.txt -l $(($(($(wc -l < /home/user_to_movie_ratings_small_dataset.csv)+shards_num-1))/shards_num)) /home/user_to_movie_ratings_small_dataset.csv /home/user_to_movie_ratings_shard'", "delta": "0:00:00.117299", "end": "2022-12-16 02:41:19.509569", "rc": 0, "start": "2022-12-16 02:41:19.392270", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Connection to node1 closed.
+Connection to node1 closed.
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy File] ***************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/profiler.py c8d641079dae:/home/profiler.py", "delta": "0:00:00.256391", "end": "2022-12-16 02:41:31.909312", "rc": 0, "start": "2022-12-16 02:41:31.652921", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy Midtier] ************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/microsuite/MicroSuite/src/Recommend/recommender_service/service/mid_tier_server_c6.cc c8d641079dae:/MicroSuite/src/Recommend/recommender_service/service/mid_tier_server.cc", "delta": "0:00:00.260676", "end": "2022-12-16 02:41:34.317622", "rc": 0, "start": "2022-12-16 02:41:34.056946", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Make Clean Midtier] ******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec -w /MicroSuite/src/Recommend/recommender_service/service c8d641079dae make clean", "delta": "0:00:00.108257", "end": "2022-12-16 02:41:36.586494", "rc": 0, "start": "2022-12-16 02:41:36.478237", "stderr": "", "stderr_lines": [], "stdout": "rm -f *.o *.pb.cc *.pb.h mid_tier_server", "stdout_lines": ["rm -f *.o *.pb.cc *.pb.h mid_tier_server"]}
+
+TASK [Make Midtier] ************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec -w /MicroSuite/src/Recommend/recommender_service/service c8d641079dae make", "delta": "0:00:06.143170", "end": "2022-12-16 02:41:42.983355", "rc": 0, "start": "2022-12-16 02:41:36.840185", "stderr": "mid_tier_server.cc: In member function 'void CFServiceClient::AsyncCompleteRpc()':\nmid_tier_server.cc:366:80: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]\n                 if (response_count_down_map[unique_request_id].responses_recvd != (number_of_cf_servers - 1)) {", "stderr_lines": ["mid_tier_server.cc: In member function 'void CFServiceClient::AsyncCompleteRpc()':", "mid_tier_server.cc:366:80: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]", "                 if (response_count_down_map[unique_request_id].responses_recvd != (number_of_cf_servers - 1)) {"], "stdout": "g++ -std=c++14 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../../ -I/usr/local/include -pthread -O3 -I../../ -Wall -fopenmp -I../../  -c -o mid_tier_server.o mid_tier_server.cc\ng++ ../../protoc_files//cf.pb.o ../../protoc_files//cf.grpc.pb.o ../../protoc_files//recommender.pb.o ../../protoc_files//recommender.grpc.pb.o ../../cf_service/service/helper_files/client_helper.o helper_files/recommender_server_helper.o helper_files/timing.o helper_files/utils.o mid_tier_server.o -O3 -o mid_tier_server -L/usr/local/lib -lgrpc++ -lgrpc -lgpr -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../../ -lboost_system -lboost_thread", "stdout_lines": ["g++ -std=c++14 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../../ -I/usr/local/include -pthread -O3 -I../../ -Wall -fopenmp -I../../  -c -o mid_tier_server.o mid_tier_server.cc", "g++ ../../protoc_files//cf.pb.o ../../protoc_files//cf.grpc.pb.o ../../protoc_files//recommender.pb.o ../../protoc_files//recommender.grpc.pb.o ../../cf_service/service/helper_files/client_helper.o helper_files/recommender_server_helper.o helper_files/timing.o helper_files/utils.o mid_tier_server.o -O3 -o mid_tier_server -L/usr/local/lib -lgrpc++ -lgrpc -lgpr -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../../ -lboost_system -lboost_thread"]}
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy Client] *************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/microsuite/MicroSuite/src/Recommend/load_generator/load_generator_open_loop_warmup_run_new.cc c8d641079dae:/MicroSuite/src/Recommend/load_generator/load_generator_open_loop.cc", "delta": "0:00:00.282461", "end": "2022-12-16 02:41:46.417116", "rc": 0, "start": "2022-12-16 02:41:46.134655", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Make Clean Client] *******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec -w /MicroSuite/src/Recommend/load_generator c8d641079dae make clean", "delta": "0:00:00.134699", "end": "2022-12-16 02:41:48.696560", "rc": 0, "start": "2022-12-16 02:41:48.561861", "stderr": "", "stderr_lines": [], "stdout": "rm -f *.o *.pb.cc *.pb.h load_generator_closed_loop load_generator_open_loop kill_recommender_server_empty", "stdout_lines": ["rm -f *.o *.pb.cc *.pb.h load_generator_closed_loop load_generator_open_loop kill_recommender_server_empty"]}
+
+TASK [Make Client] *************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec -w /MicroSuite/src/Recommend/load_generator c8d641079dae make", "delta": "0:00:11.145679", "end": "2022-12-16 02:42:00.082174", "rc": 0, "start": "2022-12-16 02:41:48.936495", "stderr": "load_generator_open_loop.cc: In function 'int main(int, char**)':\nload_generator_open_loop.cc:257:20: warning: unused variable 'exit_time' [-Wunused-variable]\n             double exit_time = curr_time + (double)(time_duration*1000000.0);\n                    ^~~~~~~~~\nload_generator_open_loop.cc:261:20: warning: unused variable 'next_time' [-Wunused-variable]\n             double next_time = distribution(generator) + curr_time;\n                    ^~~~~~~~~\nload_generator_open_loop.cc:349:19: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]\n             system(\"python3 /home/profiler.py -n node1 start\");\n             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nload_generator_open_loop.cc:417:19: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]\n             system(\"python3 /home/profiler.py -n node1 stop\");\n             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", "stderr_lines": ["load_generator_open_loop.cc: In function 'int main(int, char**)':", "load_generator_open_loop.cc:257:20: warning: unused variable 'exit_time' [-Wunused-variable]", "             double exit_time = curr_time + (double)(time_duration*1000000.0);", "                    ^~~~~~~~~", "load_generator_open_loop.cc:261:20: warning: unused variable 'next_time' [-Wunused-variable]", "             double next_time = distribution(generator) + curr_time;", "                    ^~~~~~~~~", "load_generator_open_loop.cc:349:19: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]", "             system(\"python3 /home/profiler.py -n node1 start\");", "             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", "load_generator_open_loop.cc:417:19: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]", "             system(\"python3 /home/profiler.py -n node1 stop\");", "             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"], "stdout": "g++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o load_generator_closed_loop.o load_generator_closed_loop.cc\ng++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o load_generator_closed_loop.o -O3 -o load_generator_closed_loop -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../\ng++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o load_generator_open_loop.o load_generator_open_loop.cc\ng++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o load_generator_open_loop.o -O3 -o load_generator_open_loop -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../\ng++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o kill_recommender_server_empty.o kill_recommender_server_empty.cc\ng++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o kill_recommender_server_empty.o -O3 -o kill_recommender_server_empty -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../", "stdout_lines": ["g++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o load_generator_closed_loop.o load_generator_closed_loop.cc", "g++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o load_generator_closed_loop.o -O3 -o load_generator_closed_loop -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../", "g++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o load_generator_open_loop.o load_generator_open_loop.cc", "g++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o load_generator_open_loop.o -O3 -o load_generator_open_loop -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../", "g++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o kill_recommender_server_empty.o kill_recommender_server_empty.cc", "g++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o kill_recommender_server_empty.o -O3 -o kill_recommender_server_empty -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../"]}
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy File] ***************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/microsuite/MicroSuite/src/Recommend/load_generator/helper_files/loadgen_recommender_client_helper_c6.cc c8d641079dae:/MicroSuite/src/Recommend/load_generator/helper_files/loadgen_recommender_client_helper.cc", "delta": "0:00:00.230471", "end": "2022-12-16 02:42:03.464651", "rc": 0, "start": "2022-12-16 02:42:03.234180", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy File] ***************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/microsuite/MicroSuite/src/Recommend/load_generator/helper_files/loadgen_recommender_client_helper_c6.h c8d641079dae:/MicroSuite/src/Recommend/load_generator/helper_files/loadgen_recommender_client_helper.h", "delta": "0:00:00.233280", "end": "2022-12-16 02:42:05.844401", "rc": 0, "start": "2022-12-16 02:42:05.611121", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Make Clean Client] *******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec -w /MicroSuite/src/Recommend/load_generator c8d641079dae make clean", "delta": "0:00:00.116898", "end": "2022-12-16 02:42:08.097822", "rc": 0, "start": "2022-12-16 02:42:07.980924", "stderr": "", "stderr_lines": [], "stdout": "rm -f *.o *.pb.cc *.pb.h load_generator_closed_loop load_generator_open_loop kill_recommender_server_empty", "stdout_lines": ["rm -f *.o *.pb.cc *.pb.h load_generator_closed_loop load_generator_open_loop kill_recommender_server_empty"]}
+
+TASK [Make Client] *************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec -w /MicroSuite/src/Recommend/load_generator c8d641079dae make", "delta": "0:00:11.100615", "end": "2022-12-16 02:42:19.440294", "rc": 0, "start": "2022-12-16 02:42:08.339679", "stderr": "load_generator_open_loop.cc: In function 'int main(int, char**)':\nload_generator_open_loop.cc:257:20: warning: unused variable 'exit_time' [-Wunused-variable]\n             double exit_time = curr_time + (double)(time_duration*1000000.0);\n                    ^~~~~~~~~\nload_generator_open_loop.cc:261:20: warning: unused variable 'next_time' [-Wunused-variable]\n             double next_time = distribution(generator) + curr_time;\n                    ^~~~~~~~~\nload_generator_open_loop.cc:349:19: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]\n             system(\"python3 /home/profiler.py -n node1 start\");\n             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nload_generator_open_loop.cc:417:19: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]\n             system(\"python3 /home/profiler.py -n node1 stop\");\n             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", "stderr_lines": ["load_generator_open_loop.cc: In function 'int main(int, char**)':", "load_generator_open_loop.cc:257:20: warning: unused variable 'exit_time' [-Wunused-variable]", "             double exit_time = curr_time + (double)(time_duration*1000000.0);", "                    ^~~~~~~~~", "load_generator_open_loop.cc:261:20: warning: unused variable 'next_time' [-Wunused-variable]", "             double next_time = distribution(generator) + curr_time;", "                    ^~~~~~~~~", "load_generator_open_loop.cc:349:19: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]", "             system(\"python3 /home/profiler.py -n node1 start\");", "             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", "load_generator_open_loop.cc:417:19: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]", "             system(\"python3 /home/profiler.py -n node1 stop\");", "             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"], "stdout": "g++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o load_generator_closed_loop.o load_generator_closed_loop.cc\ng++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o load_generator_closed_loop.o -O3 -o load_generator_closed_loop -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../\ng++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o load_generator_open_loop.o load_generator_open_loop.cc\ng++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o load_generator_open_loop.o -O3 -o load_generator_open_loop -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../\ng++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o kill_recommender_server_empty.o kill_recommender_server_empty.cc\ng++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o kill_recommender_server_empty.o -O3 -o kill_recommender_server_empty -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../", "stdout_lines": ["g++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o load_generator_closed_loop.o load_generator_closed_loop.cc", "g++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o load_generator_closed_loop.o -O3 -o load_generator_closed_loop -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../", "g++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o load_generator_open_loop.o load_generator_open_loop.cc", "g++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o load_generator_open_loop.o -O3 -o load_generator_open_loop -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../", "g++ -std=c++11 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../ -I/usr/local/include -pthread -O3 -I../ -g -Wall -fopenmp -I../  -c -o kill_recommender_server_empty.o kill_recommender_server_empty.cc", "g++ ../protoc_files/recommender.pb.o ../protoc_files/recommender.grpc.pb.o helper_files/loadgen_recommender_client_helper.o ../recommender_service/service/helper_files/timing.o ../recommender_service/service/helper_files/utils.o kill_recommender_server_empty.o -O3 -o kill_recommender_server_empty -L/usr/local/lib `pkg-config --libs grpc++ grpc` -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../"]}
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Make Clean Midtier] ******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec -w /MicroSuite/src/Recommend/recommender_service/service c8d641079dae make clean", "delta": "0:00:00.135570", "end": "2022-12-16 02:42:22.768558", "rc": 0, "start": "2022-12-16 02:42:22.632988", "stderr": "", "stderr_lines": [], "stdout": "rm -f *.o *.pb.cc *.pb.h mid_tier_server", "stdout_lines": ["rm -f *.o *.pb.cc *.pb.h mid_tier_server"]}
+
+TASK [Make Midtier] ************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec -w /MicroSuite/src/Recommend/recommender_service/service c8d641079dae make", "delta": "0:00:06.173732", "end": "2022-12-16 02:42:29.196206", "rc": 0, "start": "2022-12-16 02:42:23.022474", "stderr": "mid_tier_server.cc: In member function 'void CFServiceClient::AsyncCompleteRpc()':\nmid_tier_server.cc:366:80: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]\n                 if (response_count_down_map[unique_request_id].responses_recvd != (number_of_cf_servers - 1)) {", "stderr_lines": ["mid_tier_server.cc: In member function 'void CFServiceClient::AsyncCompleteRpc()':", "mid_tier_server.cc:366:80: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]", "                 if (response_count_down_map[unique_request_id].responses_recvd != (number_of_cf_servers - 1)) {"], "stdout": "g++ -std=c++14 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../../ -I/usr/local/include -pthread -O3 -I../../ -Wall -fopenmp -I../../  -c -o mid_tier_server.o mid_tier_server.cc\ng++ ../../protoc_files//cf.pb.o ../../protoc_files//cf.grpc.pb.o ../../protoc_files//recommender.pb.o ../../protoc_files//recommender.grpc.pb.o ../../cf_service/service/helper_files/client_helper.o helper_files/recommender_server_helper.o helper_files/timing.o helper_files/utils.o mid_tier_server.o -O3 -o mid_tier_server -L/usr/local/lib -lgrpc++ -lgrpc -lgpr -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../../ -lboost_system -lboost_thread", "stdout_lines": ["g++ -std=c++14 -O3 -mavx2 -mavx -fopenmp  -DMKL_ILP64 -m64 -I/opt/intel/mkl/include -I../../ -I/usr/local/include -pthread -O3 -I../../ -Wall -fopenmp -I../../  -c -o mid_tier_server.o mid_tier_server.cc", "g++ ../../protoc_files//cf.pb.o ../../protoc_files//cf.grpc.pb.o ../../protoc_files//recommender.pb.o ../../protoc_files//recommender.grpc.pb.o ../../cf_service/service/helper_files/client_helper.o helper_files/recommender_server_helper.o helper_files/timing.o helper_files/utils.o mid_tier_server.o -O3 -o mid_tier_server -L/usr/local/lib -lgrpc++ -lgrpc -lgpr -lprotobuf -lpthread -I /usr/local/include -lflann -fopenmp -L/usr/lib64 -lstdc++ -lssl -lcrypto -fopenmp -Wl,--start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_gnu_thread.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -I../../ -lboost_system -lboost_thread"]}
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Set uncore frequency] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Load msr kernel module] **************************************************
+changed: [node1] => {"changed": true, "cmd": "modprobe msr", "delta": "0:00:00.004162", "end": "2022-12-16 02:42:31.744342", "rc": 0, "start": "2022-12-16 02:42:31.740180", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+TASK [Set uncore freq] *********************************************************
+changed: [node1] => {"changed": true, "cmd": "wrmsr -p0 0x620 0x1414", "delta": "0:00:00.003829", "end": "2022-12-16 02:42:32.000389", "rc": 0, "start": "2022-12-16 02:42:31.996560", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+PLAY [Kill remote profiler] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Get the PID of running process] ******************************************
+changed: [node1] => {"changed": true, "cmd": "ps -few | grep profiler | awk '{print $2}'", "delta": "0:00:00.026213", "end": "2022-12-16 02:42:39.122841", "rc": 0, "start": "2022-12-16 02:42:39.096628", "stderr": "", "stderr_lines": [], "stdout": "1799\n1801", "stdout_lines": ["1799", "1801"]}
+
+TASK [Kill remote profiler] ****************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+failed: [node1] (item=1799) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 1799", "delta": "0:00:00.010486", "end": "2022-12-16 02:42:39.410983", "item": "1799", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 02:42:39.400497", "stderr": "kill: (1799): No such process", "stderr_lines": ["kill: (1799): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=1801) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 1801", "delta": "0:00:00.010480", "end": "2022-12-16 02:42:39.574364", "item": "1801", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 02:42:39.563884", "stderr": "kill: (1801): No such process", "stderr_lines": ["kill: (1801): No such process"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill bucket server] ******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f cf_server", "delta": "0:00:00.106173", "end": "2022-12-16 02:42:46.909738", "rc": 0, "start": "2022-12-16 02:42:46.803565", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill midtier] ************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f mid_tier_server", "delta": "0:00:00.120620", "end": "2022-12-16 02:42:49.126372", "rc": 0, "start": "2022-12-16 02:42:49.005752", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "505504477421.2272", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/505504477421.2272", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "985699360025.2405", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/985699360025.2405", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "33183293351.2537", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/33183293351.2537", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "942976181918.2667", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/942976181918.2667", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy IP file] ************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/microsuite/lookup_servers_IP.txt c8d641079dae:/MicroSuite/src/Recommend/recommender_service/service/lookup_servers_IP.txt", "delta": "0:00:00.289660", "end": "2022-12-16 02:45:26.889475", "rc": 0, "start": "2022-12-16 02:45:26.599815", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run midtier] *************************************************************
+changed: [node1] => {"ansible_job_id": "263438986515.3021", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/263438986515.3021", "started": 1}
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run remote profiler] *****************************************************
+changed: [node1] => {"ansible_job_id": "649870425206.3150", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/649870425206.3150", "started": 1}
+
+PLAY [Kill remote profiler] ****************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+INFO:root:python3 ./profiler.py -n node1 report -d /users/ganton12/data/recommend-singlenode-newclientwarmup-bucket-smalldataset-10K-mpki/turbo=False-kernelconfig=baseline-hyperthreading=False-qps=1-0/recommend
+Connection to node1 closed.
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill bucket server] ******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f cf_server", "delta": "0:00:00.112067", "end": "2022-12-16 02:53:34.994455", "rc": 0, "start": "2022-12-16 02:53:34.882388", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill midtier] ************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f mid_tier_server", "delta": "0:00:00.127562", "end": "2022-12-16 02:53:37.194385", "rc": 0, "start": "2022-12-16 02:53:37.066823", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+PLAY [Kill remote profiler] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Get the PID of running process] ******************************************
+changed: [node1] => {"changed": true, "cmd": "ps -few | grep profiler | awk '{print $2}'", "delta": "0:00:00.026910", "end": "2022-12-16 02:53:39.319483", "rc": 0, "start": "2022-12-16 02:53:39.292573", "stderr": "", "stderr_lines": [], "stdout": "3157\n3158\n3888\n3890", "stdout_lines": ["3157", "3158", "3888", "3890"]}
+
+TASK [Kill remote profiler] ****************************************************
+changed: [node1] => (item=3157) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 3157", "delta": "0:00:00.010705", "end": "2022-12-16 02:53:39.604936", "item": "3157", "rc": 0, "start": "2022-12-16 02:53:39.594231", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": [], "warnings": ["Consider using 'become', 'become_method', and 'become_user' rather than running sudo"]}
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+failed: [node1] (item=3158) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 3158", "delta": "0:00:00.011277", "end": "2022-12-16 02:53:39.769885", "item": "3158", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 02:53:39.758608", "stderr": "kill: (3158): No such process", "stderr_lines": ["kill: (3158): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=3888) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 3888", "delta": "0:00:00.011287", "end": "2022-12-16 02:53:39.926123", "item": "3888", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 02:53:39.914836", "stderr": "kill: (3888): No such process", "stderr_lines": ["kill: (3888): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=3890) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 3890", "delta": "0:00:00.010834", "end": "2022-12-16 02:53:40.085791", "item": "3890", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 02:53:40.074957", "stderr": "kill: (3890): No such process", "stderr_lines": ["kill: (3890): No such process"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+PLAY [Kill remote profiler] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Get the PID of running process] ******************************************
+changed: [node1] => {"changed": true, "cmd": "ps -few | grep profiler | awk '{print $2}'", "delta": "0:00:00.027076", "end": "2022-12-16 02:55:48.253692", "rc": 0, "start": "2022-12-16 02:55:48.226616", "stderr": "", "stderr_lines": [], "stdout": "4122\n4124", "stdout_lines": ["4122", "4124"]}
+
+TASK [Kill remote profiler] ****************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+failed: [node1] (item=4122) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 4122", "delta": "0:00:00.011264", "end": "2022-12-16 02:55:48.509402", "item": "4122", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 02:55:48.498138", "stderr": "kill: (4122): No such process", "stderr_lines": ["kill: (4122): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=4124) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 4124", "delta": "0:00:00.010712", "end": "2022-12-16 02:55:48.672795", "item": "4124", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 02:55:48.662083", "stderr": "kill: (4124): No such process", "stderr_lines": ["kill: (4124): No such process"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill bucket server] ******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f cf_server", "delta": "0:00:00.114665", "end": "2022-12-16 02:55:56.878639", "rc": 0, "start": "2022-12-16 02:55:56.763974", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill midtier] ************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f mid_tier_server", "delta": "0:00:00.122890", "end": "2022-12-16 02:55:59.075395", "rc": 0, "start": "2022-12-16 02:55:58.952505", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "315147107097.4569", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/315147107097.4569", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "710630868714.4702", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/710630868714.4702", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "597858172613.4832", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/597858172613.4832", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "597993607906.4961", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/597993607906.4961", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy IP file] ************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/microsuite/lookup_servers_IP.txt c8d641079dae:/MicroSuite/src/Recommend/recommender_service/service/lookup_servers_IP.txt", "delta": "0:00:00.260170", "end": "2022-12-16 02:58:35.221860", "rc": 0, "start": "2022-12-16 02:58:34.961690", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run midtier] *************************************************************
+changed: [node1] => {"ansible_job_id": "118854209271.5359", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/118854209271.5359", "started": 1}
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run remote profiler] *****************************************************
+changed: [node1] => {"ansible_job_id": "906763689337.5490", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/906763689337.5490", "started": 1}
+
+PLAY [Kill remote profiler] ****************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+INFO:root:python3 ./profiler.py -n node1 report -d /users/ganton12/data/recommend-singlenode-newclientwarmup-bucket-smalldataset-10K-mpki/turbo=False-kernelconfig=baseline-hyperthreading=False-qps=1-1/recommend
+Connection to node1 closed.
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill bucket server] ******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f cf_server", "delta": "0:00:00.108317", "end": "2022-12-16 03:06:43.227806", "rc": 0, "start": "2022-12-16 03:06:43.119489", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill midtier] ************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f mid_tier_server", "delta": "0:00:00.106848", "end": "2022-12-16 03:06:44.413278", "rc": 0, "start": "2022-12-16 03:06:44.306430", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+PLAY [Kill remote profiler] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Get the PID of running process] ******************************************
+changed: [node1] => {"changed": true, "cmd": "ps -few | grep profiler | awk '{print $2}'", "delta": "0:00:00.026904", "end": "2022-12-16 03:06:46.550150", "rc": 0, "start": "2022-12-16 03:06:46.523246", "stderr": "", "stderr_lines": [], "stdout": "5502\n5503\n6121\n6123", "stdout_lines": ["5502", "5503", "6121", "6123"]}
+
+TASK [Kill remote profiler] ****************************************************
+changed: [node1] => (item=5502) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 5502", "delta": "0:00:00.010801", "end": "2022-12-16 03:06:46.833494", "item": "5502", "rc": 0, "start": "2022-12-16 03:06:46.822693", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": [], "warnings": ["Consider using 'become', 'become_method', and 'become_user' rather than running sudo"]}
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+failed: [node1] (item=5503) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 5503", "delta": "0:00:00.010930", "end": "2022-12-16 03:06:46.997907", "item": "5503", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 03:06:46.986977", "stderr": "kill: (5503): No such process", "stderr_lines": ["kill: (5503): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=6121) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 6121", "delta": "0:00:00.010765", "end": "2022-12-16 03:06:47.158952", "item": "6121", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 03:06:47.148187", "stderr": "kill: (6121): No such process", "stderr_lines": ["kill: (6121): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=6123) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 6123", "delta": "0:00:00.011065", "end": "2022-12-16 03:06:47.320547", "item": "6123", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 03:06:47.309482", "stderr": "kill: (6123): No such process", "stderr_lines": ["kill: (6123): No such process"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+PLAY [Kill remote profiler] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Get the PID of running process] ******************************************
+changed: [node1] => {"changed": true, "cmd": "ps -few | grep profiler | awk '{print $2}'", "delta": "0:00:00.026527", "end": "2022-12-16 03:08:56.484955", "rc": 0, "start": "2022-12-16 03:08:56.458428", "stderr": "", "stderr_lines": [], "stdout": "6343\n6345", "stdout_lines": ["6343", "6345"]}
+
+TASK [Kill remote profiler] ****************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+failed: [node1] (item=6343) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 6343", "delta": "0:00:00.011157", "end": "2022-12-16 03:08:56.745405", "item": "6343", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 03:08:56.734248", "stderr": "kill: (6343): No such process", "stderr_lines": ["kill: (6343): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=6345) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 6345", "delta": "0:00:00.010367", "end": "2022-12-16 03:08:56.909551", "item": "6345", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 03:08:56.899184", "stderr": "kill: (6345): No such process", "stderr_lines": ["kill: (6345): No such process"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill bucket server] ******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f cf_server", "delta": "0:00:00.102264", "end": "2022-12-16 03:09:04.123083", "rc": 0, "start": "2022-12-16 03:09:04.020819", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill midtier] ************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f mid_tier_server", "delta": "0:00:00.127002", "end": "2022-12-16 03:09:06.335587", "rc": 0, "start": "2022-12-16 03:09:06.208585", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "160570688224.6798", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/160570688224.6798", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "50519306457.6928", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/50519306457.6928", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "203543093866.7056", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/203543093866.7056", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run bucket server] *******************************************************
+changed: [node1] => {"ansible_job_id": "254051690299.7185", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/254051690299.7185", "started": 1}
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Copy IP file] ************************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker cp /users/ganton12/Recommend/microsuite/lookup_servers_IP.txt c8d641079dae:/MicroSuite/src/Recommend/recommender_service/service/lookup_servers_IP.txt", "delta": "0:00:00.272299", "end": "2022-12-16 03:11:43.053405", "rc": 0, "start": "2022-12-16 03:11:42.781106", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+PLAY [Run midtier] *************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run midtier] *************************************************************
+changed: [node1] => {"ansible_job_id": "404970873266.7524", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/404970873266.7524", "started": 1}
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Run remote profiler] *****************************************************
+changed: [node1] => {"ansible_job_id": "944507861552.7659", "changed": true, "finished": 0, "results_file": "/users/ganton12/.ansible_async/944507861552.7659", "started": 1}
+
+PLAY [Kill remote profiler] ****************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+INFO:root:python3 ./profiler.py -n node1 report -d /users/ganton12/data/recommend-singlenode-newclientwarmup-bucket-smalldataset-10K-mpki/turbo=False-kernelconfig=baseline-hyperthreading=False-qps=1-2/recommend
+Connection to node1 closed.
+Connection to node1 closed.
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Kill bucket server] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill bucket server] ******************************************************
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f cf_server", "delta": "0:00:00.127839", "end": "2022-12-16 03:19:52.124857", "rc": 0, "start": "2022-12-16 03:19:51.997018", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run bucket server] *******************************************************
+
+PLAY [Copy IP file] ************************************************************
+
+PLAY [Copy Midtier] ************************************************************
+
+PLAY [Compile Midtier] *********************************************************
+
+PLAY [Copy Client] *************************************************************
+
+PLAY [Compile Client] **********************************************************
+
+PLAY [Kill midtier] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Kill midtier] ************************************************************
+changed: [node1] => {"changed": true, "cmd": "sudo docker exec c8d641079dae sudo pkill -f mid_tier_server", "delta": "0:00:00.111561", "end": "2022-12-16 03:19:53.310832", "rc": 0, "start": "2022-12-16 03:19:53.199271", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+PLAY [Run midtier] *************************************************************
+
+PLAY [Copy file] ***************************************************************
+
+PLAY [prepare dataset] *********************************************************
+
+PLAY [prepare small dataset] ***************************************************
+
+PLAY RECAP *********************************************************************
+node1                      : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Using /users/ganton12/Recommend/ansible.cfg as config file
+
+PLAY [Run remote profiler] *****************************************************
+
+PLAY [Kill remote profiler] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [Get the PID of running process] ******************************************
+changed: [node1] => {"changed": true, "cmd": "ps -few | grep profiler | awk '{print $2}'", "delta": "0:00:00.026966", "end": "2022-12-16 03:19:55.446622", "rc": 0, "start": "2022-12-16 03:19:55.419656", "stderr": "", "stderr_lines": [], "stdout": "7666\n7667\n8264\n8266", "stdout_lines": ["7666", "7667", "8264", "8266"]}
+
+TASK [Kill remote profiler] ****************************************************
+changed: [node1] => (item=7666) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 7666", "delta": "0:00:00.010968", "end": "2022-12-16 03:19:55.739186", "item": "7666", "rc": 0, "start": "2022-12-16 03:19:55.728218", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": [], "warnings": ["Consider using 'become', 'become_method', and 'become_user' rather than running sudo"]}
+[WARNING]: Consider using 'become', 'become_method', and 'become_user' rather
+than running sudo
+failed: [node1] (item=7667) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 7667", "delta": "0:00:00.011078", "end": "2022-12-16 03:19:55.904436", "item": "7667", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 03:19:55.893358", "stderr": "kill: (7667): No such process", "stderr_lines": ["kill: (7667): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=8264) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 8264", "delta": "0:00:00.011358", "end": "2022-12-16 03:19:56.065250", "item": "8264", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 03:19:56.053892", "stderr": "kill: (8264): No such process", "stderr_lines": ["kill: (8264): No such process"], "stdout": "", "stdout_lines": []}
+failed: [node1] (item=8266) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo kill 8266", "delta": "0:00:00.011219", "end": "2022-12-16 03:19:56.228322", "item": "8266", "msg": "non-zero return code", "rc": 1, "start": "2022-12-16 03:19:56.217103", "stderr": "kill: (8266): No such process", "stderr_lines": ["kill: (8266): No such process"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+PLAY RECAP *********************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae SOURCE_FILE_PATH=/users/ganton12/Recommend/ratings-only.csv DESTINATION_FILE_PATH=/" --tags "copy_file" ansible/recommend.yml
+RTAAAAAAAAAAAAAAAAAA
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae" --tags "prepare_small_dataset" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae" --tags "prepare_dataset" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae SOURCE_FILE_PATH=/users/ganton12/Recommend/profiler.py DESTINATION_FILE_PATH=/home/profiler.py" --tags "copy_file" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae MIDTIER_FILE_PATH=/users/ganton12/Recommend/microsuite/MicroSuite/src/Recommend/recommender_service/service/mid_tier_server_c6.cc" --tags "copy_midtier" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae MIDTIER_FILE_PATH=/MicroSuite/src/Recommend/recommender_service/service" --tags "compile_midtier" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae CLIENT_FILE_PATH=/users/ganton12/Recommend/microsuite/MicroSuite/src/Recommend/load_generator/load_generator_open_loop_warmup_run_new.cc" --tags "copy_client" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae CLIENT_FILE_PATH=/MicroSuite/src/Recommend/load_generator" --tags "compile_client" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae SOURCE_FILE_PATH=/users/ganton12/Recommend/microsuite/MicroSuite/src/Recommend/load_generator/helper_files/loadgen_recommender_client_helper_c6.cc DESTINATION_FILE_PATH=/MicroSuite/src/Recommend/load_generator/helper_files/loadgen_recommender_client_helper.cc" --tags "copy_file" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae SOURCE_FILE_PATH=/users/ganton12/Recommend/microsuite/MicroSuite/src/Recommend/load_generator/helper_files/loadgen_recommender_client_helper_c6.h DESTINATION_FILE_PATH=/MicroSuite/src/Recommend/load_generator/helper_files/loadgen_recommender_client_helper.h" --tags "copy_file" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae CLIENT_FILE_PATH=/MicroSuite/src/Recommend/load_generator" --tags "compile_client" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae MIDTIER_FILE_PATH=/MicroSuite/src/Recommend/recommender_service/service" --tags "compile_midtier" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "MSR_VALUE=0x1414"  ansible/configure.yml
+irtaaaaa
+ansible-playbook -v -i hosts -e "" --tags "kill_profiler" ansible/profiler.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae" --tags "kill_midtier,kill_bucket" ansible/recommend.yml
+IRTAAAAAAAA sto bucket server giat den leitourga
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard00.txt IP=0.0.0.0 PORT=50050 THREADS=1 MODE=1 ID=0 NUM_BUCKETS=4 CORES=3" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard01.txt IP=0.0.0.0 PORT=50051 THREADS=1 MODE=1 ID=1 NUM_BUCKETS=4 CORES=4" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard02.txt IP=0.0.0.0 PORT=50052 THREADS=1 MODE=1 ID=2 NUM_BUCKETS=4 CORES=5" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard03.txt IP=0.0.0.0 PORT=50053 THREADS=1 MODE=1 ID=3 NUM_BUCKETS=4 CORES=6" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae IP_FILE_PATH=/users/ganton12/Recommend/microsuite/lookup_servers_IP.txt" --tags "copy_ip_file" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae BUCKET_SERVERS=4 IP_FILE_PATH=lookup_servers_IP.txt IP=0.0.0.0 PORT=50054 NETWORK_THREADS=1 DISPATCH_THREADS=1 RESPONSE_THREADS=1 CORES=2" --tags "run_midtier" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "ITERATION=0" --tags "run_profiler" ansible/profiler.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae" --tags "kill_midtier,kill_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "" --tags "kill_profiler" ansible/profiler.yml
+irtaaaaa
+ansible-playbook -v -i hosts -e "" --tags "kill_profiler" ansible/profiler.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae" --tags "kill_midtier,kill_bucket" ansible/recommend.yml
+IRTAAAAAAAA sto bucket server giat den leitourga
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard00.txt IP=0.0.0.0 PORT=50050 THREADS=1 MODE=1 ID=0 NUM_BUCKETS=4 CORES=3" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard01.txt IP=0.0.0.0 PORT=50051 THREADS=1 MODE=1 ID=1 NUM_BUCKETS=4 CORES=4" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard02.txt IP=0.0.0.0 PORT=50052 THREADS=1 MODE=1 ID=2 NUM_BUCKETS=4 CORES=5" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard03.txt IP=0.0.0.0 PORT=50053 THREADS=1 MODE=1 ID=3 NUM_BUCKETS=4 CORES=6" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae IP_FILE_PATH=/users/ganton12/Recommend/microsuite/lookup_servers_IP.txt" --tags "copy_ip_file" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae BUCKET_SERVERS=4 IP_FILE_PATH=lookup_servers_IP.txt IP=0.0.0.0 PORT=50054 NETWORK_THREADS=1 DISPATCH_THREADS=1 RESPONSE_THREADS=1 CORES=2" --tags "run_midtier" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "ITERATION=1" --tags "run_profiler" ansible/profiler.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae" --tags "kill_midtier,kill_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "" --tags "kill_profiler" ansible/profiler.yml
+irtaaaaa
+ansible-playbook -v -i hosts -e "" --tags "kill_profiler" ansible/profiler.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae" --tags "kill_midtier,kill_bucket" ansible/recommend.yml
+IRTAAAAAAAA sto bucket server giat den leitourga
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard00.txt IP=0.0.0.0 PORT=50050 THREADS=1 MODE=1 ID=0 NUM_BUCKETS=4 CORES=3" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard01.txt IP=0.0.0.0 PORT=50051 THREADS=1 MODE=1 ID=1 NUM_BUCKETS=4 CORES=4" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard02.txt IP=0.0.0.0 PORT=50052 THREADS=1 MODE=1 ID=2 NUM_BUCKETS=4 CORES=5" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae DATASET=/home/user_to_movie_ratings_shard03.txt IP=0.0.0.0 PORT=50053 THREADS=1 MODE=1 ID=3 NUM_BUCKETS=4 CORES=6" --tags "run_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae IP_FILE_PATH=/users/ganton12/Recommend/microsuite/lookup_servers_IP.txt" --tags "copy_ip_file" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae BUCKET_SERVERS=4 IP_FILE_PATH=lookup_servers_IP.txt IP=0.0.0.0 PORT=50054 NETWORK_THREADS=1 DISPATCH_THREADS=1 RESPONSE_THREADS=1 CORES=2" --tags "run_midtier" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "ITERATION=2" --tags "run_profiler" ansible/profiler.yml
+ansible-playbook -v -i hosts -e "CONTAINER_ID=c8d641079dae" --tags "kill_midtier,kill_bucket" ansible/recommend.yml
+ansible-playbook -v -i hosts -e "" --tags "kill_profiler" ansible/profiler.yml

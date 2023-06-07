@@ -1,0 +1,25 @@
+---
+- name: Install Recommend
+  hosts: midtier
+  tasks:    
+  - name: Install Recommend if not exists
+    unarchive: 
+      src: ~/Recommend.tgz 
+      dest: ~/
+  - name: Set Up Docker Curl
+    command: ~/Recommend/scripts/set-up-docker.sh
+  - name: Make Space to Commit Image
+    command: ~/Recommend/scripts/change-storage-location-docker.sh
+
+- name: Execute Recommend Container 
+  hosts:
+  - midtier
+  #- bucket
+  #- client
+  tags: compose_up_recommend
+  tasks:
+    - name: Change to docker group 
+      command: sudo newgrp docker
+    
+    - name: Compose Up Recommend
+      command: ~/Recommend/scripts/docker-compose-up.sh
