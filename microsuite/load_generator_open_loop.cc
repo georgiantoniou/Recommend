@@ -184,6 +184,9 @@ class RecommenderServiceClient {
                     char* cmd = new char[s.length() + 1];
                     std::strcpy(cmd, s.c_str());
                     ExecuteShellCommand(cmd);
+                    std::cout << "Call Status Error Code: " << call->status.error_code() << "\n";
+                    std::cout << "Call Status Error Message: " << call->status.error_message() << "\n";
+                    std::cout << "Call Status Error Details: " << call->status.error_details() << "\n";
                     std::cout << "Load generator failed\n";
                     CHECK(false, "");
                 }
